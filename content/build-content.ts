@@ -22,7 +22,12 @@ import type {
 
 const GENERATED_DIR = path.resolve("src/generated");
 const PUBLIC_ASSET_DIR = path.resolve("public/content-assets");
-const BASE_PATH = process.env.GITHUB_ACTIONS ? "/agentic_design_patterns" : "";
+
+const repositoryName = process.env.GITHUB_REPOSITORY?.split("/")[1];
+const isUserOrOrgPagesRepo = repositoryName?.endsWith(".github.io");
+const BASE_PATH = process.env.GITHUB_ACTIONS
+  ? process.env.GITHUB_PAGES_BASE_PATH ?? (repositoryName && !isUserOrOrgPagesRepo ? `/${repositoryName}` : "")
+  : "";
 
 type SourceMap = Map<string, SourceDocument>;
 
