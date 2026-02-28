@@ -30,7 +30,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Build with Next.js
-        run: npm run build
+        run: npm run build > next-build.log 2>&1 || (cat next-build.log && exit 1)
+      - name: Upload build logs
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-logs
+          path: next-build.log
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
