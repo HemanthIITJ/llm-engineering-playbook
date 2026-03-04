@@ -1,5 +1,5 @@
 # Embedding Sharing and Positional Encoding Strategies in Modern Large Language Models: A Comprehensive Technical Report
-![](./assets/02_embeddings_and_positional_encoding.png)
+![02 embeddings and positional encoding](./assets/02_embeddings_and_positional_encoding.png)
 ---
 
 ## Table of Contents

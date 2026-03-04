@@ -2,7 +2,7 @@
 ![01_strategic_justification_p01_the_10m_question_a_strategic_framework_for_llm_pre.png](./assets/notes/01_strategic_justification_p01_the_10m_question_a_strategic_framework_for_llm_pre.png)
 
 # Strategic Justification for Large Language Model Pretraining: A Decision-Theoretic Framework
-![](./assets/01_strategic_justification.png)
+![01 strategic justification](./assets/01_strategic_justification.png)
 ---
 
 ## 1. Introduction and Motivation

@@ -29,7 +29,7 @@
 
 
 
-![](assets/LLM_Training_Lifecycle_page_1.png)
+![LLM Training Lifecycle page 1](assets/LLM_Training_Lifecycle_page_1.png)
 
 # Fine-Tuning and Alignment of Large Language Models
 
@@ -953,7 +953,7 @@ with sequence-level probability $p_\theta(y \mid x) = \exp\left(\frac{1}{|y|}\su
 #### 4.8.4 Constitutional AI (CAI / RLAIF)
 
 
-![](assets/LLM_Training_Lifecycle_page_13.png)
+![LLM Training Lifecycle page 13](assets/LLM_Training_Lifecycle_page_13.png)
 
 Replaces human preference annotators with **AI-generated feedback** guided by a set of principles (a "constitution"):
 
@@ -988,7 +988,7 @@ Standard (offline) DPO trains on a **fixed** preference dataset. This can lead t
 **Online DPO** (Iterative DPO / Self-Play):
 
 
-![](assets/LLM_Training_Lifecycle_page_12.png)
+![LLM Training Lifecycle page 12](assets/LLM_Training_Lifecycle_page_12.png)
 
 ```
 REPEAT for R rounds:
@@ -1022,10 +1022,10 @@ $$\text{Gold reward}(y) \uparrow\text{ initially, then } \downarrow \text{ as } 
 **Goodhart's Law** in alignment: "When a measure becomes a target, it ceases to be a good measure."
 
 
-![](assets/LLM_Training_Lifecycle_page_14.png)
+![LLM Training Lifecycle page 14](assets/LLM_Training_Lifecycle_page_14.png)
 
 
-![](assets/LLM_Training_Lifecycle_page_11.png)
+![LLM Training Lifecycle page 11](assets/LLM_Training_Lifecycle_page_11.png)
 
 **Mitigation strategies:**
 1. **KL penalty** $\beta$ — primary defense, constrains policy drift
@@ -1036,29 +1036,29 @@ $$\text{Gold reward}(y) \uparrow\text{ initially, then } \downarrow \text{ as } 
 ### 4.13 End-to-End Alignment Pipeline — Unified View
 
 
-![](assets/LLM_Training_Lifecycle_page_15.png)
+![LLM Training Lifecycle page 15](assets/LLM_Training_Lifecycle_page_15.png)
 
 $$\boxed{\text{Raw Corpus}} \xrightarrow{\text{Pretrain}} \boxed{\theta^*_{\text{base}}} \xrightarrow{\text{SFT / Instruct Tune}} \boxed{\pi_{\text{SFT}}} \xrightarrow{\text{Alignment (DPO/PPO)}} \boxed{\pi_{\text{aligned}}}$$
 
 At each stage, the information source and optimization target changes:
 
 
-![](assets/LLM_Training_Lifecycle_page_10.png)
+![LLM Training Lifecycle page 10](assets/LLM_Training_Lifecycle_page_10.png)
 
 
-![](assets/LLM_Training_Lifecycle_page_8.png)
+![LLM Training Lifecycle page 8](assets/LLM_Training_Lifecycle_page_8.png)
 
 
-![](assets/LLM_Training_Lifecycle_page_6.png)
+![LLM Training Lifecycle page 6](assets/LLM_Training_Lifecycle_page_6.png)
 
 
-![](assets/LLM_Training_Lifecycle_page_5.png)
+![LLM Training Lifecycle page 5](assets/LLM_Training_Lifecycle_page_5.png)
 
 
-![](assets/LLM_Training_Lifecycle_page_3.png)
+![LLM Training Lifecycle page 3](assets/LLM_Training_Lifecycle_page_3.png)
 
 
-![](assets/LLM_Training_Lifecycle_page_2.png)
+![LLM Training Lifecycle page 2](assets/LLM_Training_Lifecycle_page_2.png)
 
 | Stage | Data | Signal Type | Optimization Target |
 |-------|------|-------------|-------------------|
@@ -1068,11 +1068,11 @@ At each stage, the information source and optimization target changes:
 | Alignment | Preferences (10K–500K pairs) | Comparative / preference | $\max \text{reward} - \beta \cdot \text{KL}$ |
 
 The data quantity **decreases** at each stage while the signal **specificity and density increase** — a progressive refinement from broad knowledge to precise behavioral control.
-![](assets/LLM_Training_Lifecycle_page_9.png)
+![LLM Training Lifecycle page 9](assets/LLM_Training_Lifecycle_page_9.png)
 
 
-![](assets/LLM_Training_Lifecycle_page_7.png)
+![LLM Training Lifecycle page 7](assets/LLM_Training_Lifecycle_page_7.png)
 
 
-![](assets/LLM_Training_Lifecycle_page_4.png)
+![LLM Training Lifecycle page 4](assets/LLM_Training_Lifecycle_page_4.png)
 

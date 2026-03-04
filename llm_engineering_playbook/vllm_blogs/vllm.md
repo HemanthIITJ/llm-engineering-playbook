@@ -58,12 +58,12 @@ This creates a **critical GPU memory bottleneck** — traditional systems must *
 
 Empirical measurements show that **60–80%** of KV-cache memory is wasted under naive contiguous allocation strategies.
 
-![](./assets/kv_cache_memory_problem.png)
+![kv cache memory problem](./assets/kv_cache_memory_problem.png)
 
 ### 1.2 PagedAttention: Operating-System-Inspired Solution
 
 PagedAttention directly borrows the **virtual memory paging** concept from operating system design and applies it to KV-cache management.
-![](./assets/vLLM_SYSTEM_overview.png)
+![vLLM SYSTEM overview](./assets/vLLM_SYSTEM_overview.png)
 #### Core Abstraction: Blocks as Pages
 
 The key-value cache for each sequence is partitioned into fixed-size **blocks** (analogous to OS memory pages). Each block stores the KV vectors for a fixed number of tokens $B$ (the **block size**, typically $B = 16$).
@@ -90,7 +90,7 @@ $$W(s) \leq (B - 1) \times 2 \times L \times H \times d_h \times \text{sizeof(dt
 
 This is a **constant overhead** per sequence, independent of $T_{\max}$.
 
-![](./assets/block_table.png)
+![block table](./assets/block_table.png)
 
 #### Physical Memory Pool
 
@@ -142,7 +142,7 @@ $$d_{i+1} = d_i \cdot e^{m_i - m_{i+1}} + \hat{d}_{i+1} \cdot e^{\hat{m}_{i+1} -
 $$o_{i+1} = o_i \cdot \frac{d_i \cdot e^{m_i - m_{i+1}}}{d_{i+1}} + \hat{o}_{i+1} \cdot \frac{\hat{d}_{i+1} \cdot e^{\hat{m}_{i+1} - m_{i+1}}}{d_{i+1}}$$
 
 Where $m_i$, $d_i$, $o_i$ are running maximum, denominator sum, and weighted output after processing block $i$.
-![](./assets/key_and_values_non_contiguous%20.png)
+![key and values non contiguous](./assets/key_and_values_non_contiguous%20.png)
 ### 1.4 Copy-on-Write for Shared Prefixes
 
 When multiple sequences share a common prefix (e.g., in parallel sampling), PagedAttention enables **memory sharing** through reference counting:

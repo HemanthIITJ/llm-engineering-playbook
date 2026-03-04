@@ -6,7 +6,7 @@
 ![02_design_specification_p01_the_llm_pretraining_playbook_translating_strategic.png](./assets/notes/02_design_specification_p01_the_llm_pretraining_playbook_translating_strategic.png)
 
 # Translating Strategic Objectives into Technical Specifications: A Systematic Framework for LLM Design Decisions
-![](./assets/02_design_specification.png)
+![02 design specification](./assets/02_design_specification.png)
 ---
 
 

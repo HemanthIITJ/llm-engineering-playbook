@@ -25,7 +25,7 @@
 
 
 
-![](assets/Word_Embedding_Theory_page_1.png)
+![Word Embedding Theory page 1](assets/Word_Embedding_Theory_page_1.png)
 
 # Word Embeddings: A Rigorous Treatment
 
@@ -34,7 +34,7 @@
 
 ## 1. Word Embedding
 
-![](assets/word_vector_space_1772168867208.png)
+![word vector space 1772168867208](assets/word_vector_space_1772168867208.png)
 
 ### Definition
 
@@ -57,14 +57,14 @@ The naïve one-hot representation $\mathbf{o}_i \in \{0,1\}^V$ satisfies:
 $$\mathbf{o}_i^\top \mathbf{o}_j = \delta_{ij} = \begin{cases} 1 & \text{if } i = j \\ 0 & \text{otherwise} \end{cases}$$
 
 
-![](assets/Word_Embedding_Theory_page_2.png)
+![Word Embedding Theory page 2](assets/Word_Embedding_Theory_page_2.png)
 
 This imposes **orthogonality** on all word pairs, obliterating any semantic or syntactic similarity signal. The inner product carries zero information about linguistic relatedness. Dimensionality is $O(V)$ — typically $V \in [10^4, 10^6]$ — yielding catastrophic sparsity.
 
 ### Core Desiderata of Embeddings
 
 
-![](assets/Word_Embedding_Theory_page_4.png)
+![Word Embedding Theory page 4](assets/Word_Embedding_Theory_page_4.png)
 
 | Property | Formal Requirement |
 |---|---|
@@ -82,7 +82,7 @@ $$\text{cos}(\mathbf{e}_i, \mathbf{e}_j) = \frac{\mathbf{e}_i^\top \mathbf{e}_j}
 
 ## 2. Distributional Hypothesis
 
-![](assets/distributional_context_window_1772168900015.png)
+![distributional context window 1772168900015](assets/distributional_context_window_1772168900015.png)
 
 ### Definition
 
@@ -97,7 +97,7 @@ Two words $w_i, w_j$ are semantically similar if and only if:
 $$D_{\text{KL}}\Big(P(\text{context} \mid w_i) \;\|\; P(\text{context} \mid w_j)\Big) \approx 0$$
 
 
-![](assets/Word_Embedding_Theory_page_3.png)
+![Word Embedding Theory page 3](assets/Word_Embedding_Theory_page_3.png)
 
 where $D_{\text{KL}}$ is the Kullback-Leibler divergence. When the context distributions are nearly identical, the words occupy similar semantic roles.
 
@@ -149,7 +149,7 @@ $$\text{sem\_sim}(w_i, w_j) = \cos\theta_{ij} = \frac{\mathbf{e}_i^\top \mathbf{
 
 **3.2 Analogy as Parallelogram Structure**
 
-![](assets/vector_semantics_parallelogram_1772168882756.png)
+![vector semantics parallelogram 1772168882756](assets/vector_semantics_parallelogram_1772168882756.png)
 
 The analogy "$a$ is to $b$ as $c$ is to $d$" holds when:
 
@@ -225,7 +225,7 @@ $$\phi_{\text{static}}: w \mapsto \mathbf{e}_w \in \mathbb{R}^d \quad \text{(con
 $$\phi_{\text{contextual}}: (w, \mathcal{C}) \mapsto \mathbf{h}_w^{(\mathcal{C})} \in \mathbb{R}^d$$
 
 
-![](assets/Word_Embedding_Theory_page_5.png)
+![Word Embedding Theory page 5](assets/Word_Embedding_Theory_page_5.png)
 
 For a polysemous word like "bank," static embeddings produce a single conflated vector, whereas contextual embeddings produce distinct vectors for "river bank" versus "financial bank."
 
@@ -292,7 +292,7 @@ The word embedding becomes:
 $$\mathbf{E} = \mathbf{U}_d \boldsymbol{\Sigma}_d^{\alpha}, \quad \alpha \in \{0, 0.5, 1\}$$
 
 
-![](assets/Word_Embedding_Theory_page_6.png)
+![Word Embedding Theory page 6](assets/Word_Embedding_Theory_page_6.png)
 
 Setting $\alpha = 0.5$ is common, balancing between pure rotation ($\alpha=0$) and full magnitude scaling ($\alpha=1$).
 
@@ -305,11 +305,11 @@ $$\mathbf{U}_d, \boldsymbol{\Sigma}_d, \mathbf{V}_d = \arg\min_{\text{rank-}d} \
 ### 5.6 Prediction-Based Methods
 
 
-![](assets/Word_Embedding_Theory_page_7.png)
+![Word Embedding Theory page 7](assets/Word_Embedding_Theory_page_7.png)
 
 #### Word2Vec: Skip-Gram with Negative Sampling (SGNS)
 
-![](assets/skipgram_architecture_1772168916033.png)
+![skipgram architecture 1772168916033](assets/skipgram_architecture_1772168916033.png)
 
 **Objective:** Given center word $w_t$, predict context words $w_c$ within window $k$.
 
@@ -368,7 +368,7 @@ $$\mathbf{v}_{w} = \frac{1}{|\mathcal{G}_w|} \sum_{g \in \mathcal{G}_w} \mathbf{
 where $\mathcal{G}_w$ is the set of $n$-grams (typically $n \in [3,6]$) of word $w$ plus the word itself.
 
 
-![](assets/Word_Embedding_Theory_page_8.png)
+![Word Embedding Theory page 8](assets/Word_Embedding_Theory_page_8.png)
 
 **Advantages:**
 - Handles **out-of-vocabulary (OOV)** words via subword composition
@@ -572,7 +572,7 @@ PROCEDURE:
 
 ## 6. Bias in Word Embeddings
 
-![](assets/embedding_bias_subspace_1772168934860.png)
+![embedding bias subspace 1772168934860](assets/embedding_bias_subspace_1772168934860.png)
 
 ### Definition
 
@@ -797,7 +797,7 @@ $$\theta_{\text{task}} = \arg\min_\theta \mathcal{L}_{\text{task}}(f_\theta(\mat
 The embedding layer may be **frozen** (feature extraction) or **fine-tuned** (end-to-end adaptation), with the choice governed by:
 
 
-![](assets/Word_Embedding_Theory_page_10.png)
+![Word Embedding Theory page 10](assets/Word_Embedding_Theory_page_10.png)
 
 $$\text{Fine-tune if: } |\mathcal{D}_{\text{task}}| \gg d \cdot V_{\text{active}} \quad \text{(sufficient data to avoid overfitting)}$$
 
@@ -820,7 +820,7 @@ $$\mathbf{d}_{\text{TF-IDF}} = \frac{\sum_{w \in D} \text{TF-IDF}(w, D) \cdot \m
 $$\mathbf{d}_{\text{SIF}} = \frac{1}{|D|} \sum_{w \in D} \frac{a}{a + P(w)} \mathbf{e}_w \quad \text{(Smooth Inverse Frequency, Arora et al. 2017)}$$
 
 
-![](assets/Word_Embedding_Theory_page_11.png)
+![Word Embedding Theory page 11](assets/Word_Embedding_Theory_page_11.png)
 
 followed by removal of the first principal component (common discourse vector).
 
@@ -831,15 +831,15 @@ followed by removal of the first principal component (common discourse vector).
 The entire landscape of word embeddings can be understood through a single lens:
 
 
-![](assets/Word_Embedding_Theory_page_15.png)
+![Word Embedding Theory page 15](assets/Word_Embedding_Theory_page_15.png)
 
 $$\underbrace{\text{Distributional Hypothesis}}_{\text{Theoretical Foundation}} \xrightarrow{\text{operationalized via}} \underbrace{\text{Co-occurrence Statistics}}_{\text{Data}} \xrightarrow{\text{compressed by}} \underbrace{\text{Matrix Factorization / Neural Prediction}}_{\text{Algorithm}} \xrightarrow{\text{yielding}} \underbrace{\mathbf{E} \in \mathbb{R}^{V \times d}}_{\text{Embedding}}$$
 
 
-![](assets/Word_Embedding_Theory_page_12.png)
+![Word Embedding Theory page 12](assets/Word_Embedding_Theory_page_12.png)
 
 
-![](assets/Word_Embedding_Theory_page_9.png)
+![Word Embedding Theory page 9](assets/Word_Embedding_Theory_page_9.png)
 
 The key result unifying the field: **all major static embedding methods — SGNS, GloVe, SVD on PPMI — are implicitly or explicitly factorizing variants of the co-occurrence matrix** (Levy, Goldberg & Dagan, 2015). They differ in:
 
@@ -850,8 +850,8 @@ The key result unifying the field: **all major static embedding methods — SGNS
 | GloVe | $\log X_{ij}$ | $f(X_{ij})$ capped | AdaGrad |
 
 This unification reveals that **hyperparameter tuning** (window size, subsampling, negative samples, dimensionality) matters more than the choice of algorithm — a finding with profound practical and theoretical implications.
-![](assets/Word_Embedding_Theory_page_14.png)
+![Word Embedding Theory page 14](assets/Word_Embedding_Theory_page_14.png)
 
 
-![](assets/Word_Embedding_Theory_page_13.png)
+![Word Embedding Theory page 13](assets/Word_Embedding_Theory_page_13.png)
 

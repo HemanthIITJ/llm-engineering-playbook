@@ -9,7 +9,7 @@
 ### 1.1 Definition
 
 
-![](assets/System_2_LLM_Engineering_page_1.png)
+![System 2 LLM Engineering page 1](assets/System_2_LLM_Engineering_page_1.png)
 
 **Reasoning** in the context of LLMs refers to the capacity of a model $\mathcal{M}_\theta$ to derive new conclusions, intermediate inferences, or structured logical steps from given premises, moving beyond surface-level pattern matching to exhibit systematic, compositional, and verifiable multi-step inference. Formally, reasoning is the construction of a **proof trajectory** $\pi = (s_1, s_2, \dots, s_n)$ such that:
 
@@ -20,7 +20,7 @@ $$
 where each $s_i$ follows from $\mathcal{P} \cup \{s_1, \dots, s_{i-1}\}$ under a (possibly implicit) inference rule, and $y$ is the final answer.
 
 
-![](assets/System_2_LLM_Engineering_page_2.png)
+![System 2 LLM Engineering page 2](assets/System_2_LLM_Engineering_page_2.png)
 
 The fundamental tension: autoregressive LLMs model $P_\theta(y_t \mid y_{<t}, x)$ — a **System 1** (fast, associative) process. Reasoning demands **System 2** (slow, deliberate, sequential) computation. All reasoning-enhancement techniques attempt to bridge this gap.
 
@@ -63,7 +63,7 @@ $$
 $$
 
 
-![](assets/System_2_LLM_Engineering_page_3.png)
+![System 2 LLM Engineering page 3](assets/System_2_LLM_Engineering_page_3.png)
 
 This connects to the result that **constant-depth transformers cannot solve $\text{TC}^0$-hard problems** (e.g., arithmetic on unbounded integers), but **autoregressive generation with intermediate steps** makes transformers Turing-complete in the limit.
 
@@ -130,7 +130,7 @@ $$
 $$
 
 
-![](assets/System_2_LLM_Engineering_page_4.png)
+![System 2 LLM Engineering page 4](assets/System_2_LLM_Engineering_page_4.png)
 
 ### 1.6 Process Reward Models (PRMs) vs. Outcome Reward Models (ORMs)
 
@@ -482,10 +482,10 @@ OUTPUT:
     attn_diagnostics : attention entropy and coverage statistics
 
 
-![](assets/System_2_LLM_Engineering_page_6.png)
+![System 2 LLM Engineering page 6](assets/System_2_LLM_Engineering_page_6.png)
 
 
-![](assets/System_2_LLM_Engineering_page_5.png)
+![System 2 LLM Engineering page 5](assets/System_2_LLM_Engineering_page_5.png)
 
  1. // === DETERMINE CONTEXT HANDLING STRATEGY ===
  2. IF n ≤ L_train THEN
@@ -610,7 +610,7 @@ where $\mathcal{N}(x_e)$ is the **semantic neighborhood** of $x_e$ (paraphrases,
 The foundational assumption behind locate-and-edit methods:
 
 
-![](assets/System_2_LLM_Engineering_page_7.png)
+![System 2 LLM Engineering page 7](assets/System_2_LLM_Engineering_page_7.png)
 
 > Factual knowledge is stored in **identifiable, localized** subsets of parameters, particularly in the **MLP layers** of transformers, which function as key-value memories.
 
@@ -656,7 +656,7 @@ $$
 #### 3.4.2 Locate-and-Edit: ROME
 
 
-![](assets/System_2_LLM_Engineering_page_8.png)
+![System 2 LLM Engineering page 8](assets/System_2_LLM_Engineering_page_8.png)
 
 **ROME** (Rank-One Model Editing) treats MLP weights as a linear associative memory:
 
@@ -951,7 +951,7 @@ Research shows that **the model often "knows" it is hallucinating** — the info
 #### 4.5.1 Training-Time Mitigations
 
 
-![](assets/System_2_LLM_Engineering_page_9.png)
+![System 2 LLM Engineering page 9](assets/System_2_LLM_Engineering_page_9.png)
 
 | Strategy | Mechanism | Formal Effect |
 |---|---|---|
@@ -987,7 +987,7 @@ $$
 $$
 
 
-![](assets/System_2_LLM_Engineering_page_10.png)
+![System 2 LLM Engineering page 10](assets/System_2_LLM_Engineering_page_10.png)
 
 This amplifies factual tokens (which change significantly between layers) and suppresses generic/hallucinated tokens (which are stable).
 
@@ -1232,7 +1232,7 @@ $$
 This creates a **virtuous cycle**: better generation → better judging → better preference data → better generation.
 
 
-![](assets/System_2_LLM_Engineering_page_11.png)
+![System 2 LLM Engineering page 11](assets/System_2_LLM_Engineering_page_11.png)
 
 #### 5.3.4 Reinforcement Learning from Verifiable Rewards (RLVR)
 
@@ -1279,7 +1279,7 @@ $$
 ### 5.5 Mitigation Against Collapse
 
 
-![](assets/System_2_LLM_Engineering_page_12.png)
+![System 2 LLM Engineering page 12](assets/System_2_LLM_Engineering_page_12.png)
 
 | Strategy | Mechanism |
 |---|---|
@@ -1346,7 +1346,7 @@ OUTPUT:
     evolution_log   : per-iteration metrics
 
 
-![](assets/System_2_LLM_Engineering_page_13.png)
+![System 2 LLM Engineering page 13](assets/System_2_LLM_Engineering_page_13.png)
 
  1. evolution_log ← ∅
  2. θ ← θ₀
@@ -1465,7 +1465,7 @@ OUTPUT:
 ## 6. Unified Conceptual Map
 
 
-![](assets/System_2_LLM_Engineering_page_14.png)
+![System 2 LLM Engineering page 14](assets/System_2_LLM_Engineering_page_14.png)
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐

@@ -1,7 +1,7 @@
 
 
 
-![](assets/Efficient_LLM_Scaling_page_1.png)
+![Efficient LLM Scaling page 1](assets/Efficient_LLM_Scaling_page_1.png)
 
 # Efficient Methods for Fine-Tuning Large Language Models
 
@@ -14,7 +14,7 @@
 A pretrained LLM $\mathcal{M}_\theta$ with $|\theta| = d$ parameters (often $d \in [7\text{B}, 405\text{B}]$) incurs prohibitive costs along three axes:
 
 
-![](assets/Efficient_LLM_Scaling_page_2.png)
+![Efficient LLM Scaling page 2](assets/Efficient_LLM_Scaling_page_2.png)
 
 | Cost Axis | Scaling Behavior | Bottleneck |
 |-----------|-----------------|------------|
@@ -35,7 +35,7 @@ where $C(\cdot)$ is a composite cost function over memory, FLOPs, and latency.
 #### 1.2.1 Definition
 
 
-![](assets/Efficient_LLM_Scaling_page_3.png)
+![Efficient LLM Scaling page 3](assets/Efficient_LLM_Scaling_page_3.png)
 
 **Knowledge distillation (KD)** transfers the learned function of a large **teacher** model $\mathcal{T}_\phi$ to a smaller **student** model $\mathcal{S}_\theta$ by training the student to mimic the teacher's output distribution rather than solely fitting hard labels. The teacher's softened probability distribution encodes **dark knowledge** — inter-class similarities, calibrated uncertainties, and relational structure — that hard labels destroy.
 
@@ -221,7 +221,7 @@ PROCEDURE:
 #### 2.1.2 Taxonomy of Pruning
 
 
-![](assets/Efficient_LLM_Scaling_page_4.png)
+![Efficient LLM Scaling page 4](assets/Efficient_LLM_Scaling_page_4.png)
 
 ```
 Pruning
@@ -440,7 +440,7 @@ $$s = \frac{\max(|x|)}{2^{b-1} - 1}, \quad q = \text{clamp}\left(\left\lfloor \f
 #### 2.3.3 Quantization Granularity
 
 
-![](assets/Efficient_LLM_Scaling_page_5.png)
+![Efficient LLM Scaling page 5](assets/Efficient_LLM_Scaling_page_5.png)
 
 | Granularity | Scale Shared Across | Parameters | Accuracy |
 |-------------|-------------------|------------|----------|
@@ -499,7 +499,7 @@ Used in QLoRA. Based on the empirical observation that pretrained weights follow
 $$\text{NF4 quantiles} = \Phi^{-1}\left(\frac{2i + 1}{2 \cdot 2^b}\right), \quad i = 0, 1, \dots, 2^b - 1$$
 
 
-![](assets/Efficient_LLM_Scaling_page_6.png)
+![Efficient LLM Scaling page 6](assets/Efficient_LLM_Scaling_page_6.png)
 
 where $\Phi^{-1}$ is the inverse normal CDF. This places quantization grid points at **equal-probability intervals** of the Gaussian, minimizing expected quantization error $\mathbb{E}[(x - \hat{x})^2]$ for normally distributed $x$.
 
@@ -652,7 +652,7 @@ The optimization:
 $$\phi^* = \arg\min_\phi \; \mathbb{E}_{(x,y) \sim \mathcal{D}_{\text{task}}} \left[\mathcal{L}(\theta^* \oplus \phi; x, y)\right]$$
 
 
-![](assets/Efficient_LLM_Scaling_page_7.png)
+![Efficient LLM Scaling page 7](assets/Efficient_LLM_Scaling_page_7.png)
 
 **Intrinsic dimensionality hypothesis (Aghajanyan et al., 2021):** Fine-tuning operates in a **low-dimensional subspace**. For a $d$-parameter model, the intrinsic dimension $d_{\text{int}} \ll d$ (often $d_{\text{int}} \sim 10^3 \text{–} 10^4$ even for $d \sim 10^9$):
 
@@ -887,7 +887,7 @@ where $l_k, l_v \in \mathbb{R}^{d_k}$ and $l_{\text{ff}} \in \mathbb{R}^{d_{\tex
 ### 3.6 Comprehensive PEFT Comparison
 
 
-![](assets/Efficient_LLM_Scaling_page_8.png)
+![Efficient LLM Scaling page 8](assets/Efficient_LLM_Scaling_page_8.png)
 
 | Method | Trainable Params | Inference Overhead | Multi-Task | Composition | Memory |
 |--------|-----------------|--------------------|-----------:|-------------|--------|
@@ -1011,7 +1011,7 @@ PROCEDURE:
       but optimizer states are projected)
 
 
-![](assets/Efficient_LLM_Scaling_page_9.png)
+![Efficient LLM Scaling page 9](assets/Efficient_LLM_Scaling_page_9.png)
 
   3. TRAINING LOOP:
      optimizer ← AdamW(φ, lr=η)
@@ -1575,7 +1575,7 @@ Standard backpropagation stores all intermediate activations — for an $L$-laye
 **ZeRO Stage Classification:**
 
 
-![](assets/Efficient_LLM_Scaling_page_14.png)
+![Efficient LLM Scaling page 14](assets/Efficient_LLM_Scaling_page_14.png)
 
 | ZeRO Stage | Sharded Component | Memory per GPU |
 |:---:|---|---|
@@ -1592,16 +1592,16 @@ where $d$ = model params (in FP16), $N$ = number of devices, and 12 = bytes for 
 $$\boxed{\text{Efficiency} = f(\underbrace{\text{Compression}}_{\text{pruning + quantization}}, \underbrace{\text{PEFT}}_{\text{LoRA, adapters, prefix}}, \underbrace{\text{Training}}_{\text{mixed precision, data selection}}, \underbrace{\text{Inference}}_{\text{prompt compression, KV-cache}})}$$
 
 
-![](assets/Efficient_LLM_Scaling_page_13.png)
+![Efficient LLM Scaling page 13](assets/Efficient_LLM_Scaling_page_13.png)
 
 
-![](assets/Efficient_LLM_Scaling_page_12.png)
+![Efficient LLM Scaling page 12](assets/Efficient_LLM_Scaling_page_12.png)
 
 
-![](assets/Efficient_LLM_Scaling_page_11.png)
+![Efficient LLM Scaling page 11](assets/Efficient_LLM_Scaling_page_11.png)
 
 
-![](assets/Efficient_LLM_Scaling_page_10.png)
+![Efficient LLM Scaling page 10](assets/Efficient_LLM_Scaling_page_10.png)
 
 | Technique | Primary Bottleneck Addressed | Typical Savings | Quality Impact |
 |-----------|:---:|:---:|:---:|
@@ -1621,6 +1621,6 @@ $$\boxed{\text{Efficiency} = f(\underbrace{\text{Compression}}_{\text{pruning + 
 $$\text{QLoRA} + \text{BF16 training} + \text{gradient checkpointing} + \text{data selection} + \text{4-bit inference} + \text{KV-cache quant}$$
 
 
-![](assets/Efficient_LLM_Scaling_page_15.png)
+![Efficient LLM Scaling page 15](assets/Efficient_LLM_Scaling_page_15.png)
 
 This stack enables fine-tuning 70B-parameter models on 2× 24GB GPUs and deploying them on consumer hardware — democratizing access to frontier LLM capabilities.

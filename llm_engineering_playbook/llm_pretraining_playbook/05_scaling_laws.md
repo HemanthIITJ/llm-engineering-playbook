@@ -1,5 +1,5 @@
 # Scaling Laws for Language Models: Parameter-Data Trade-offs, Compute-Optimal Training, and the Overtraining Paradigm
-![](./assets/05_scaling_laws.png)
+![05 scaling laws](./assets/05_scaling_laws.png)
 ## A Comprehensive Scientific Technical Report
 
 ---

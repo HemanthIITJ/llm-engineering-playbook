@@ -1,5 +1,5 @@
 # Sparse Mixture-of-Experts Architectures, Hybrid Attention Mechanisms, and Base Architecture Selection for Large Language Models: A Comprehensive Technical Report
-![](./assets/04_sparsity_and_moe.png)
+![04 sparsity and moe](./assets/04_sparsity_and_moe.png)
 ---
 
 ## Table of Contents

@@ -61,7 +61,7 @@ The $\mathcal{O}(1)$ path length between any two positions enables direct gradie
 
 ### 1.3 Canonical Architecture
 
-![](assets/transformer_encoder_decoder_architecture_1772169294249.png)
+![transformer encoder decoder architecture 1772169294249](assets/transformer_encoder_decoder_architecture_1772169294249.png)
 
 The original Transformer (Vaswani et al., 2017) follows an **encoder-decoder** structure:
 
@@ -127,7 +127,7 @@ PROCEDURE:
 
 ### 2.2 Scaled Dot-Product Attention
 
-![](assets/scaled_dot_product_attention_1772169312584.png)
+![scaled dot product attention 1772169312584](assets/scaled_dot_product_attention_1772169312584.png)
 
 Given input $X \in \mathbb{R}^{n \times d_{\text{model}}}$, we project into three distinct subspaces:
 
@@ -267,7 +267,7 @@ This gives $A \in \mathbb{R}^{m \times n}$ — the decoder attending to encoder 
 ### 3.1 Definition
 
 
-![](assets/Modern_Transformer_Architecture_page_1.png)
+![Modern Transformer Architecture page 1](assets/Modern_Transformer_Architecture_page_1.png)
 
 A **Transformer Encoder Block** is a single computational unit within the encoder stack. It applies **bidirectional** (unmasked) self-attention followed by a position-wise feed-forward network, with residual connections and layer normalization at each sub-layer.
 
@@ -324,7 +324,7 @@ $$\text{output} = \text{LN}(x + \text{Sublayer}(x))$$
 $$\text{output} = x + \text{Sublayer}(\text{LN}(x))$$
 
 
-![](assets/Modern_Transformer_Architecture_page_2.png)
+![Modern Transformer Architecture page 2](assets/Modern_Transformer_Architecture_page_2.png)
 
 Pre-Norm places the residual pathway as a **direct, unobstructed additive path**, improving gradient flow at initialization and enabling stable training of very deep models (>100 layers) without warmup. The tradeoff: Pre-Norm can underperform Post-Norm at convergence for moderate depths (Xiong et al., 2020), though this gap closes with proper optimization.
 
@@ -337,7 +337,7 @@ INPUT:
     X       ∈ ℝ^{n × d_model}        — sequence representations from previous layer
     h       ∈ ℤ⁺                     — number of attention heads
 
-![](assets/Modern_Transformer_Architecture_page_3.png)
+![Modern Transformer Architecture page 3](assets/Modern_Transformer_Architecture_page_3.png)
 
 
 OUTPUT:
@@ -1011,7 +1011,7 @@ where $a_{ij} = \text{softmax}_j(x_i^\top W^{QK} x_j / \sqrt{d_k})$.
 #### 7.3.3 Identified Circuit Motifs
 
 
-![](assets/Modern_Transformer_Architecture_page_4.png)
+![Modern Transformer Architecture page 4](assets/Modern_Transformer_Architecture_page_4.png)
 
 | Circuit | Mechanism | Layers |
 |---|---|---|
@@ -1024,7 +1024,7 @@ where $a_{ij} = \text{softmax}_j(x_i^\top W^{QK} x_j / \sqrt{d_k})$.
 
 #### 7.4.1 Direct Logit Attribution (DLA)
 
-![](assets/Modern_Transformer_Architecture_page_5.png)
+![Modern Transformer Architecture page 5](assets/Modern_Transformer_Architecture_page_5.png)
 
 
 $$\Delta \text{logit}(t)_{\text{head}_{l,h}} = w_t^\top \cdot W^O_{l,h} \cdot \left(\sum_j a_{ij} W^V_{l,h} x_j\right)$$
@@ -1037,7 +1037,7 @@ Replace activation $a$ at a specific component with its value from a **corrupted
 
 $$\Delta \mathcal{L} = \mathcal{L}(\text{with patch}) - \mathcal{L}(\text{original})$$
 
-![](assets/Modern_Transformer_Architecture_page_6.png)
+![Modern Transformer Architecture page 6](assets/Modern_Transformer_Architecture_page_6.png)
 
 
 **Causal mediation analysis:** determines which components are causally necessary for a behavior.
@@ -1050,7 +1050,7 @@ $$f = \text{ReLU}(W_{\text{enc}}(x - b_{\text{dec}}) + b_{\text{enc}}) \in \math
 
 $$\hat{x} = W_{\text{dec}} f + b_{\text{dec}}$$
 
-![](assets/Modern_Transformer_Architecture_page_7.png)
+![Modern Transformer Architecture page 7](assets/Modern_Transformer_Architecture_page_7.png)
 
 
 $$\mathcal{L} = \|x - \hat{x}\|_2^2 + \lambda \|f\|_1$$
@@ -1063,7 +1063,7 @@ The $\ell_1$ penalty encourages sparse $f$, where each dimension ideally corresp
 ALGORITHM: Residual_Stream_Logit_Attribution
 
 
-![](assets/Modern_Transformer_Architecture_page_8.png)
+![Modern Transformer Architecture page 8](assets/Modern_Transformer_Architecture_page_8.png)
 
 INPUT:
     token_ids    ∈ ℤ^{n}              — input token sequence
@@ -1076,7 +1076,7 @@ OUTPUT:
                                          [embed, attn_1, mlp_1, ..., attn_L, mlp_L]
 
 
-![](assets/Modern_Transformer_Architecture_page_9.png)
+![Modern Transformer Architecture page 9](assets/Modern_Transformer_Architecture_page_9.png)
 
 PROCEDURE:
     // Forward pass storing all intermediate writes
@@ -1089,7 +1089,7 @@ PROCEDURE:
         a_l ← Attn_l(LayerNorm(residual))     // ∈ ℝ^{n × d}
         APPEND a_l[target_pos] TO writes
 
-![](assets/Modern_Transformer_Architecture_page_10.png)
+![Modern Transformer Architecture page 10](assets/Modern_Transformer_Architecture_page_10.png)
 
         residual ← residual + a_l
 
@@ -1102,7 +1102,7 @@ PROCEDURE:
     // Apply final LayerNorm (for Pre-Norm: already applied)
     // Get unembedding direction for target token
 
-![](assets/Modern_Transformer_Architecture_page_11.png)
+![Modern Transformer Architecture page 11](assets/Modern_Transformer_Architecture_page_11.png)
 
     w_t ← W_U[:, target_tok]                  // ∈ ℝ^{d}
 
@@ -1115,7 +1115,7 @@ PROCEDURE:
 
     // Verify: sum(contributions) ≈ logit(target_tok)  (up to LayerNorm effects)
 
-![](assets/Modern_Transformer_Architecture_page_12.png)
+![Modern Transformer Architecture page 12](assets/Modern_Transformer_Architecture_page_12.png)
 
 
     RETURN contributions
@@ -1165,15 +1165,15 @@ PROCEDURE:
 $$\boxed{\text{tokens} \xrightarrow{W_E + \text{PE}} \underbrace{x^{(0)}}_{\text{residual stream}} \xrightarrow[\text{reads/writes}]{\text{Attn}^{(1)}, \text{MLP}^{(1)}} x^{(1)} \xrightarrow{\cdots} x^{(L)} \xrightarrow{W_U} \text{logits} \xrightarrow{\text{softmax}} P(y_t \mid y_{<t})}$$
 
 
-![](assets/Modern_Transformer_Architecture_page_13.png)
+![Modern Transformer Architecture page 13](assets/Modern_Transformer_Architecture_page_13.png)
 
 Each layer does **not** transform the representation — it **adds a correction** to the residual stream. The residual stream is the fundamental object; attention and MLPs are **read-process-write** operators on this shared bandwidth. This formulation unifies:
 
 
-![](assets/Modern_Transformer_Architecture_page_15.png)
+![Modern Transformer Architecture page 15](assets/Modern_Transformer_Architecture_page_15.png)
 
 - **Architecture design** (what to add to the stream)
 - **Efficient inference** (what can be cached, shared, or pruned)
 - **Mechanistic understanding** (which components contribute what to which predictions)
-![](assets/Modern_Transformer_Architecture_page_14.png)
+![Modern Transformer Architecture page 14](assets/Modern_Transformer_Architecture_page_14.png)
 

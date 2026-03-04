@@ -1,5 +1,5 @@
 # Empirical Foundations of Large Language Model Development: A Comprehensive Technical Report on Ablation Methodology, Baseline Selection, and Experimental Rigor in Pretraining
-![](./assets/08_ablation_methodology.png)
+![08 ablation methodology](./assets/08_ablation_methodology.png)
 ---
 
 ## Abstract

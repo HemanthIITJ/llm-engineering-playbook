@@ -10,13 +10,13 @@
 Language Model Pretraining is the paradigm of learning transferable, general-purpose representations of language by optimizing a self-supervised objective over large unlabeled corpora $\mathcal{D} = \{x^{(1)}, x^{(2)}, \ldots, x^{(N)}\}$, where each $x^{(i)} = (x_1^{(i)}, x_2^{(i)}, \ldots, x_{T_i}^{(i)})$ is a variable-length token sequence. The learned parameters $\theta^*$ encode distributional, syntactic, and semantic regularities that transfer to downstream tasks via fine-tuning or feature extraction, dramatically reducing the labeled data requirement.
 
 
-![](assets/Pretraining_Modern_AI_page_1.png)
+![Pretraining Modern AI page 1](assets/Pretraining_Modern_AI_page_1.png)
 
 The foundational statistical premise rests on the **distributional hypothesis**: linguistic units occurring in similar contexts share semantic properties. Pretraining operationalizes this by maximizing the likelihood of observed token co-occurrence patterns under a parameterized model.
 
 ### 1.2 Mathematical Formulation
 
-![](assets/mlm_vs_ar_objective_1772169120375.png)
+![mlm vs ar objective 1772169120375](assets/mlm_vs_ar_objective_1772169120375.png)
 
 #### 1.2.1 Autoregressive (Causal) Language Modeling
 
@@ -52,7 +52,7 @@ where $\mathcal{S}^{(i)} = \{s_1^{(i)}, s_2^{(i)}, \ldots\}$ are the corrupted s
 
 ### 1.3 The Pretraining–Fine-tuning Paradigm
 
-![](assets/pretrain_finetune_paradigm_1772169190992.png)
+![pretrain finetune paradigm 1772169190992](assets/pretrain_finetune_paradigm_1772169190992.png)
 
 The two-stage transfer protocol:
 
@@ -147,7 +147,7 @@ PROCEDURE:
 
 ## 2. Embeddings from Language Models (ELMo)
 
-![](assets/elmo_bilstm_architecture_1772169138713.png)
+![elmo bilstm architecture 1772169138713](assets/elmo_bilstm_architecture_1772169138713.png)
 
 ### 2.1 Definition
 
@@ -547,12 +547,12 @@ PROCEDURE:
 
 ## 4. Encoder-Based Pretraining (BERT)
 
-![](assets/bert_encoder_stack_1772169156261.png)
+![bert encoder stack 1772169156261](assets/bert_encoder_stack_1772169156261.png)
 
 ### 4.1 Definition
 
 
-![](assets/Pretraining_Modern_AI_page_2.png)
+![Pretraining Modern AI page 2](assets/Pretraining_Modern_AI_page_2.png)
 
 BERT (Bidirectional Encoder Representations from Transformers; Devlin et al., 2019) is a **deep bidirectional Transformer encoder** pretrained on two self-supervised objectives—Masked Language Modeling (MLM) and Next Sentence Prediction (NSP)—that learns rich, bidirectional contextualized representations suitable for transfer to a broad range of downstream NLU tasks via fine-tuning with a minimal task-specific output layer.
 
@@ -679,7 +679,7 @@ $$(\hat{a}_{start}, \hat{a}_{end}) = \arg\max_{i \leq j} \; \text{score}(i, j)$$
 ### 4.6 Comparison: ELMo vs. BERT — Architectural Paradigm Shift
 
 
-![](assets/Pretraining_Modern_AI_page_4.png)
+![Pretraining Modern AI page 4](assets/Pretraining_Modern_AI_page_4.png)
 
 | Dimension | ELMo | BERT |
 |-----------|------|------|
@@ -693,10 +693,10 @@ $$(\hat{a}_{start}, \hat{a}_{end}) = \arg\max_{i \leq j} \; \text{score}(i, j)$$
 
 ### 4.7 Subsequent Innovations (BERT Lineage)
 
-![](assets/electra_rtd_framework_1772169176157.png)
+![electra rtd framework 1772169176157](assets/electra_rtd_framework_1772169176157.png)
 
 
-![](assets/Pretraining_Modern_AI_page_3.png)
+![Pretraining Modern AI page 3](assets/Pretraining_Modern_AI_page_3.png)
 
 | Model | Key Modification | Impact |
 |-------|-----------------|--------|
@@ -1308,7 +1308,7 @@ These suggest that pretraining learns **pattern matching** over reasoning traces
 ### 6.3 Summary Table: Limitations and Mitigation Strategies
 
 
-![](assets/Pretraining_Modern_AI_page_5.png)
+![Pretraining Modern AI page 5](assets/Pretraining_Modern_AI_page_5.png)
 
 | Limitation | Root Cause | Mitigation Approach |
 |------------|-----------|---------------------|
@@ -1398,7 +1398,7 @@ PROCEDURE:
     33. IDENTIFY "lost-in-the-middle" degradation zone
 
 
-![](assets/Pretraining_Modern_AI_page_11.png)
+![Pretraining Modern AI page 11](assets/Pretraining_Modern_AI_page_11.png)
 
     // ========== 6. Reasoning Depth Analysis ==========
     34. FOR each reasoning_depth d ∈ {2, 4, 6, 8, 10, 12}:
@@ -1438,22 +1438,22 @@ PROCEDURE:
 ## Conceptual Dependency Graph
 
 
-![](assets/Pretraining_Modern_AI_page_15.png)
+![Pretraining Modern AI page 15](assets/Pretraining_Modern_AI_page_15.png)
 
 
-![](assets/Pretraining_Modern_AI_page_14.png)
+![Pretraining Modern AI page 14](assets/Pretraining_Modern_AI_page_14.png)
 
 
-![](assets/Pretraining_Modern_AI_page_12.png)
+![Pretraining Modern AI page 12](assets/Pretraining_Modern_AI_page_12.png)
 
 
-![](assets/Pretraining_Modern_AI_page_9.png)
+![Pretraining Modern AI page 9](assets/Pretraining_Modern_AI_page_9.png)
 
 
-![](assets/Pretraining_Modern_AI_page_8.png)
+![Pretraining Modern AI page 8](assets/Pretraining_Modern_AI_page_8.png)
 
 
-![](assets/Pretraining_Modern_AI_page_6.png)
+![Pretraining Modern AI page 6](assets/Pretraining_Modern_AI_page_6.png)
 
 ```
 Static Word Embeddings (Word2Vec, GloVe)
@@ -1466,13 +1466,13 @@ ELMo (Contextualized via biLSTM, feature-based transfer)
 GPT (Unidirectional Transformer,  BERT (Bidirectional Transformer,
  fine-tuning transfer)             MLM + NSP, fine-tuning transfer)
 
-![](assets/Pretraining_Modern_AI_page_13.png)
+![Pretraining Modern AI page 13](assets/Pretraining_Modern_AI_page_13.png)
 
 
-![](assets/Pretraining_Modern_AI_page_10.png)
+![Pretraining Modern AI page 10](assets/Pretraining_Modern_AI_page_10.png)
 
 
-![](assets/Pretraining_Modern_AI_page_7.png)
+![Pretraining Modern AI page 7](assets/Pretraining_Modern_AI_page_7.png)
 
        │                          │
        ▼                          ▼

@@ -7,10 +7,10 @@
 ### 1.1 Formal Definition
 
 
-![](assets/LLM_Reasoning_Topologies_page_2.png)
+![LLM Reasoning Topologies page 2](assets/LLM_Reasoning_Topologies_page_2.png)
 
 
-![](assets/LLM_Reasoning_Topologies_page_1.png)
+![LLM Reasoning Topologies page 1](assets/LLM_Reasoning_Topologies_page_1.png)
 
 Prompt engineering is the **systematic optimization over discrete natural-language input sequences** to maximally elicit desired behavior from a frozen (or fixed) autoregressive language model $M_\theta$. It operates in the **input space** rather than the **parameter space**, treating the prompt as a learnable (or designable) interface to the model's latent knowledge.
 
@@ -55,7 +55,7 @@ $$
 $$
 
 
-![](assets/LLM_Reasoning_Topologies_page_3.png)
+![LLM Reasoning Topologies page 3](assets/LLM_Reasoning_Topologies_page_3.png)
 
 This **non-Lipschitz behavior** in discrete prompt space is a fundamental challenge — small edits can produce arbitrarily large performance swings.
 
@@ -159,7 +159,7 @@ for some acceptable performance threshold $\tau_i$.
 ### 2.3 Taxonomy of Application Modalities
 
 
-![](assets/LLM_Reasoning_Topologies_page_5.png)
+![LLM Reasoning Topologies page 5](assets/LLM_Reasoning_Topologies_page_5.png)
 
 | **Application Class** | **Prompt Mechanism** | **Output Space** |
 |---|---|---|
@@ -180,7 +180,7 @@ P_\theta(y \mid x, \mathcal{E}) \approx \int P(y \mid x, c) \; P(c \mid \mathcal
 $$
 
 
-![](assets/LLM_Reasoning_Topologies_page_4.png)
+![LLM Reasoning Topologies page 4](assets/LLM_Reasoning_Topologies_page_4.png)
 
 where $c$ is a latent **concept variable** representing the task. The exemplars $\mathcal{E}$ serve to **concentrate the posterior** $P(c \mid \mathcal{E})$ around the true task concept $c^*$, enabling accurate conditional generation.
 
@@ -910,7 +910,7 @@ PROCEDURE:
 To sort a list of 128 elements, GoT constructs:
 
 
-![](assets/LLM_Reasoning_Topologies_page_12.png)
+![LLM Reasoning Topologies page 12](assets/LLM_Reasoning_Topologies_page_12.png)
 
 | **Step** | **Operation** | **Effect** |
 |---|---|---|
@@ -937,10 +937,10 @@ $$
 ### 6.2 Expressivity vs. Cost Tradeoff
 
 
-![](assets/LLM_Reasoning_Topologies_page_13.png)
+![LLM Reasoning Topologies page 13](assets/LLM_Reasoning_Topologies_page_13.png)
 
 
-![](assets/LLM_Reasoning_Topologies_page_11.png)
+![LLM Reasoning Topologies page 11](assets/LLM_Reasoning_Topologies_page_11.png)
 
 | **Method** | **Expressivity** | **LLM Calls** | **Latency** | **Error Recovery** | **Multi-Source Synthesis** |
 |---|---|---|---|---|---|
@@ -953,13 +953,13 @@ $$
 ### 6.3 Decision Criteria for Method Selection
 
 
-![](assets/LLM_Reasoning_Topologies_page_14.png)
+![LLM Reasoning Topologies page 14](assets/LLM_Reasoning_Topologies_page_14.png)
 
 
-![](assets/LLM_Reasoning_Topologies_page_10.png)
+![LLM Reasoning Topologies page 10](assets/LLM_Reasoning_Topologies_page_10.png)
 
 
-![](assets/LLM_Reasoning_Topologies_page_8.png)
+![LLM Reasoning Topologies page 8](assets/LLM_Reasoning_Topologies_page_8.png)
 
 $$
 \text{Method}^* = \begin{cases}
@@ -972,14 +972,14 @@ $$
 $$
 
 
-![](assets/LLM_Reasoning_Topologies_page_15.png)
+![LLM Reasoning Topologies page 15](assets/LLM_Reasoning_Topologies_page_15.png)
 
 
-![](assets/LLM_Reasoning_Topologies_page_9.png)
+![LLM Reasoning Topologies page 9](assets/LLM_Reasoning_Topologies_page_9.png)
 
 
-![](assets/LLM_Reasoning_Topologies_page_6.png)
+![LLM Reasoning Topologies page 6](assets/LLM_Reasoning_Topologies_page_6.png)
 
 The fundamental insight across this progression: **each method progressively relaxes the topological constraints on the reasoning computation graph**, trading increased inference cost for greater expressivity and error resilience.
-![](assets/LLM_Reasoning_Topologies_page_7.png)
+![LLM Reasoning Topologies page 7](assets/LLM_Reasoning_Topologies_page_7.png)
 

@@ -1078,46 +1078,46 @@ $$
 ### 6.7 Summary Table of Limitations
 
 
-![](assets/Universal_LLM_Frontiers_page_15.png)
+![Universal LLM Frontiers page 15](assets/Universal_LLM_Frontiers_page_15.png)
 
 
-![](assets/Universal_LLM_Frontiers_page_14.png)
+![Universal LLM Frontiers page 14](assets/Universal_LLM_Frontiers_page_14.png)
 
 
-![](assets/Universal_LLM_Frontiers_page_13.png)
+![Universal LLM Frontiers page 13](assets/Universal_LLM_Frontiers_page_13.png)
 
 
-![](assets/Universal_LLM_Frontiers_page_12.png)
+![Universal LLM Frontiers page 12](assets/Universal_LLM_Frontiers_page_12.png)
 
 
-![](assets/Universal_LLM_Frontiers_page_11.png)
+![Universal LLM Frontiers page 11](assets/Universal_LLM_Frontiers_page_11.png)
 
 
-![](assets/Universal_LLM_Frontiers_page_10.png)
+![Universal LLM Frontiers page 10](assets/Universal_LLM_Frontiers_page_10.png)
 
 
-![](assets/Universal_LLM_Frontiers_page_9.png)
+![Universal LLM Frontiers page 9](assets/Universal_LLM_Frontiers_page_9.png)
 
 
-![](assets/Universal_LLM_Frontiers_page_8.png)
+![Universal LLM Frontiers page 8](assets/Universal_LLM_Frontiers_page_8.png)
 
 
-![](assets/Universal_LLM_Frontiers_page_7.png)
+![Universal LLM Frontiers page 7](assets/Universal_LLM_Frontiers_page_7.png)
 
 
-![](assets/Universal_LLM_Frontiers_page_6.png)
+![Universal LLM Frontiers page 6](assets/Universal_LLM_Frontiers_page_6.png)
 
 
-![](assets/Universal_LLM_Frontiers_page_5.png)
+![Universal LLM Frontiers page 5](assets/Universal_LLM_Frontiers_page_5.png)
 
 
-![](assets/Universal_LLM_Frontiers_page_4.png)
+![Universal LLM Frontiers page 4](assets/Universal_LLM_Frontiers_page_4.png)
 
 
-![](assets/Universal_LLM_Frontiers_page_2.png)
+![Universal LLM Frontiers page 2](assets/Universal_LLM_Frontiers_page_2.png)
 
 
-![](assets/Universal_LLM_Frontiers_page_1.png)
+![Universal LLM Frontiers page 1](assets/Universal_LLM_Frontiers_page_1.png)
 
 | **Category** | **Core Limitation** | **Root Cause** | **Mitigation Status** |
 |---|---|---|---|
@@ -1128,5 +1128,5 @@ $$
 | Architecture | Context limits, sequential generation | Attention complexity, autoregressive bottleneck | Sparse attention, parallel decoding |
 | Safety | Cross-lingual/cross-modal vulnerabilities | Alignment data English-centric | Multilingual red-teaming |
 | Compute | Superlinear scaling cost | Fundamental scaling laws | Efficiency research |
-![](assets/Universal_LLM_Frontiers_page_3.png)
+![Universal LLM Frontiers page 3](assets/Universal_LLM_Frontiers_page_3.png)
 

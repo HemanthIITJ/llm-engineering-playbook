@@ -1,5 +1,5 @@
 # Optimizer Selection and Training Hyperparameter Configuration for Large Language Model Pretraining: A Comprehensive Technical Report
-![](./assets/06_optimizer_and_hyperparameters.png)
+![06 optimizer and hyperparameters](./assets/06_optimizer_and_hyperparameters.png)
 ---
 
 ## Table of Contents

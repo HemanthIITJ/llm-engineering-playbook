@@ -4,7 +4,7 @@
 ![03_attention_mechanisms_p01_systematic_design_of_llm_architectures_principles.png](./assets/03_attention_mechanisms_p01_systematic_design_of_llm_architectures_principles.png)
 
 # Technical Report: Systematic Design of Large Language Model Architectures — Principles, Mechanisms, and Empirical Validation
-![](./assets/03_attention_mechanisms.png)
+![03 attention mechanisms](./assets/03_attention_mechanisms.png)
 ---
 
 ## Table of Contents

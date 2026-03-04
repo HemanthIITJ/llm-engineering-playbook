@@ -104,7 +104,7 @@ where $\tau$ is a temperature parameter controlling retrieval distribution sharp
 
 ## 2.2 RAG Architecture — End-to-End Pipeline
 
-![](assets/rag_system_architecture_1772170219324.png)
+![rag system architecture 1772170219324](assets/rag_system_architecture_1772170219324.png)
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
@@ -838,7 +838,7 @@ PROCEDURE:
 An **LLM Agent** is an autonomous system $\mathcal{A} = (\mathcal{M}_\theta, \mathcal{P}, \mathcal{T}, \mathcal{E}, \mathcal{S})$ where:
 
 
-![](assets/Augmented_LLM_Evolution_page_3.png)
+![Augmented LLM Evolution page 3](assets/Augmented_LLM_Evolution_page_3.png)
 
 - $\mathcal{M}_\theta$ — the backbone language model serving as the **cognitive core**
 - $\mathcal{P}$ — the **planning module** (decomposition, goal-setting, strategy selection)
@@ -859,10 +859,10 @@ where:
 ## 5.2 Agent Architecture — The Cognitive Architecture
 
 
-![](assets/Augmented_LLM_Evolution_page_4.png)
+![Augmented LLM Evolution page 4](assets/Augmented_LLM_Evolution_page_4.png)
 
 
-![](assets/Augmented_LLM_Evolution_page_1.png)
+![Augmented LLM Evolution page 1](assets/Augmented_LLM_Evolution_page_1.png)
 
 ```
 ┌──────────────────────────────────────────────────────────────────────┐
@@ -875,10 +875,10 @@ where:
 │                                │                                     │
 │   ┌────────────────────────────▼─────────────────────────────────┐   │
 
-![](assets/Augmented_LLM_Evolution_page_5.png)
+![Augmented LLM Evolution page 5](assets/Augmented_LLM_Evolution_page_5.png)
 
 
-![](assets/Augmented_LLM_Evolution_page_2.png)
+![Augmented LLM Evolution page 2](assets/Augmented_LLM_Evolution_page_2.png)
 
 │   │                    MEMORY MODULE  S                           │   │
 │   │  ┌──────────┐  ┌──────────────┐  ┌────────────────────────┐ │   │
@@ -891,7 +891,7 @@ where:
 │                                │                                     │
 │   ┌────────────────────────────▼─────────────────────────────────┐   │
 
-![](assets/Augmented_LLM_Evolution_page_6.png)
+![Augmented LLM Evolution page 6](assets/Augmented_LLM_Evolution_page_6.png)
 
 │   │                 REASONING / PLANNING MODULE  P                │   │
 │   │                                                               │   │
@@ -1398,7 +1398,7 @@ PROCEDURE:
 ## 5.7 Agent Evaluation Metrics
 
 
-![](assets/Augmented_LLM_Evolution_page_14.png)
+![Augmented LLM Evolution page 14](assets/Augmented_LLM_Evolution_page_14.png)
 
 | Metric | Definition |
 |---|---|
@@ -1413,13 +1413,13 @@ PROCEDURE:
 # Summary: Unified View of Augmented LLMs
 
 
-![](assets/Augmented_LLM_Evolution_page_10.png)
+![Augmented LLM Evolution page 10](assets/Augmented_LLM_Evolution_page_10.png)
 
 
-![](assets/Augmented_LLM_Evolution_page_9.png)
+![Augmented LLM Evolution page 9](assets/Augmented_LLM_Evolution_page_9.png)
 
 
-![](assets/Augmented_LLM_Evolution_page_7.png)
+![Augmented LLM Evolution page 7](assets/Augmented_LLM_Evolution_page_7.png)
 
 ```
 ┌──────────────────────────────────────────────────────────────────┐
@@ -1432,7 +1432,7 @@ PROCEDURE:
 │   │  Naive  │    │Advanced │    │   Tool    │    │  Agentic  │ │
 │   │  RAG    │───▶│  RAG    │───▶│  Calling  │───▶│  Systems  │ │
 
-![](assets/Augmented_LLM_Evolution_page_8.png)
+![Augmented LLM Evolution page 8](assets/Augmented_LLM_Evolution_page_8.png)
 
 │   │         │    │+Rerank  │    │  + RAG    │    │           │ │
 │   │ Single  │    │+Rewrite │    │           │    │ Planning  │ │
@@ -1450,14 +1450,14 @@ PROCEDURE:
 ```
 
 
-![](assets/Augmented_LLM_Evolution_page_15.png)
+![Augmented LLM Evolution page 15](assets/Augmented_LLM_Evolution_page_15.png)
 
 
-![](assets/Augmented_LLM_Evolution_page_12.png)
+![Augmented LLM Evolution page 12](assets/Augmented_LLM_Evolution_page_12.png)
 
 
-![](assets/Augmented_LLM_Evolution_page_11.png)
+![Augmented LLM Evolution page 11](assets/Augmented_LLM_Evolution_page_11.png)
 
 The progression from RAG → Tool Calling → Agents represents an increase along three axes: **autonomy** (the system's ability to self-direct), **capability** (range of problems solvable), and **complexity** (engineering and evaluation difficulty). The optimal operating point depends on the task's requirements for accuracy, latency, cost, and the degree of trust placed in autonomous model behavior.
-![](assets/Augmented_LLM_Evolution_page_13.png)
+![Augmented LLM Evolution page 13](assets/Augmented_LLM_Evolution_page_13.png)
 

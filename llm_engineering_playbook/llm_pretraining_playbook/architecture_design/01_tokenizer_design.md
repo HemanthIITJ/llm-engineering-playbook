@@ -1,5 +1,5 @@
 # Tokenizer Design, Evaluation, and Selection for Large Language Models: A Comprehensive Technical Report
-![](./assets/01_tokenizer_design.png)
+![01 tokenizer design](./assets/01_tokenizer_design.png)
 ---
 
 ## Table of Contents

@@ -1,5 +1,5 @@
 # Training Stability Techniques in Large Language Model Pretraining: A Comprehensive Technical Report
-![](./assets/05_training_stability.png)
+![05 training stability](./assets/05_training_stability.png)
 ---
 
 ## Table of Contents

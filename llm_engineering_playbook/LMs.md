@@ -36,12 +36,12 @@
 ## 1. Introduction
 
 
-![](assets/LLM_Evolution_and_Scaling_page_1.png)
+![LLM Evolution and Scaling page 1](assets/LLM_Evolution_and_Scaling_page_1.png)
 
 Language modeling constitutes the computational and mathematical framework for assigning probability distributions over sequences of discrete tokens drawn from a finite vocabulary. At its core, this endeavor sits at the intersection of **statistical estimation theory**, **information theory**, **sequential decision-making**, and **representation learning**. The central scientific question is:
 
 
-![](assets/LLM_Evolution_and_Scaling_page_2.png)
+![LLM Evolution and Scaling page 2](assets/LLM_Evolution_and_Scaling_page_2.png)
 
 > *Given a finite vocabulary $\mathcal{V}$ and a corpus $\mathcal{D}$ of observed token sequences, how do we construct a parametric or non-parametric function $P_\theta$ that faithfully captures the true data-generating distribution $P^*$ over all possible sequences $\mathbf{x} \in \mathcal{V}^*$, while generalizing to unseen compositions?*
 
@@ -71,7 +71,7 @@ where $\mathcal{V}^*$ denotes the Kleene closure of $\mathcal{V}$ (the set of al
 
 ### 2.2 Autoregressive Factorization
 
-![](assets/autoregressive_generation_1772169007493.png)
+![autoregressive generation 1772169007493](assets/autoregressive_generation_1772169007493.png)
 
 By the **chain rule of probability**, any joint distribution over a sequence $\mathbf{x} = (x_1, x_2, \ldots, x_T)$ decomposes exactly as:
 
@@ -227,7 +227,7 @@ where $h'$ is the $(n-2)$-gram backoff context, $d(c)$ is a count-dependent disc
 #### 3.1.4 Fundamental Limitations
 
 
-![](assets/LLM_Evolution_and_Scaling_page_3.png)
+![LLM Evolution and Scaling page 3](assets/LLM_Evolution_and_Scaling_page_3.png)
 
 1. **No parameter sharing**: The model learns nothing about the relationship between "cat sat on" and "dog sat on"—each $n$-gram is an independent parameter.
 2. **Discrete representation**: Words are atomic symbols with no notion of semantic similarity.
@@ -260,7 +260,7 @@ $$Z = \sum_{v=1}^{|\mathcal{V}|} \exp(\mathbf{u}_v^\top \mathbf{h} + d_v)$$
 For $|\mathcal{V}| \sim 10^5$, this becomes expensive. Approximations developed:
 
 
-![](assets/LLM_Evolution_and_Scaling_page_4.png)
+![LLM Evolution and Scaling page 4](assets/LLM_Evolution_and_Scaling_page_4.png)
 
 - **Hierarchical softmax**: Organize vocabulary as a binary tree; prediction cost $O(\log |\mathcal{V}|)$
 - **Noise Contrastive Estimation (NCE)**: Reduce to binary classification: distinguish true tokens from $k$ noise samples drawn from $Q(w)$
@@ -323,7 +323,7 @@ $$\mathbf{h}_t = (1 - \mathbf{z}_t) \odot \mathbf{h}_{t-1} + \mathbf{z}_t \odot 
 #### 3.3.4 Fundamental Limitations of Recurrence
 
 
-![](assets/LLM_Evolution_and_Scaling_page_5.png)
+![LLM Evolution and Scaling page 5](assets/LLM_Evolution_and_Scaling_page_5.png)
 
 1. **Sequential bottleneck**: $\mathbf{h}_t$ depends on $\mathbf{h}_{t-1}$, precluding parallelization across time steps during training. Compute cost is $O(T)$ serial operations.
 2. **Fixed-size bottleneck**: The entire prefix history $\mathbf{x}_{<t}$ must be compressed into a fixed-dimensional vector $\mathbf{h}_t \in \mathbb{R}^d$, creating an information bottleneck governed by:
@@ -359,7 +359,7 @@ This eliminates the single-vector bottleneck of vanilla seq2seq by allowing dire
 #### 3.5.1 Core Insight
 
 
-![](assets/LLM_Evolution_and_Scaling_page_6.png)
+![LLM Evolution and Scaling page 6](assets/LLM_Evolution_and_Scaling_page_6.png)
 
 Replace all recurrence with **self-attention**—every position attends to every other position in parallel, eliminating the sequential bottleneck entirely.
 
@@ -373,7 +373,7 @@ $$\text{Attention}(\mathbf{Q}, \mathbf{K}, \mathbf{V}) = \text{softmax}\left(\fr
 
 #### 3.5.3 Multi-Head Attention
 
-![](assets/transformer_multihead_1772169034790.png)
+![transformer multihead 1772169034790](assets/transformer_multihead_1772169034790.png)
 
 $$\text{MultiHead}(\mathbf{Q}, \mathbf{K}, \mathbf{V}) = \text{Concat}(\text{head}_1, \ldots, \text{head}_H) \mathbf{W}^O$$
 
@@ -382,7 +382,7 @@ $$\text{head}_i = \text{Attention}(\mathbf{Q}\mathbf{W}_i^Q, \mathbf{K}\mathbf{W
 where $\mathbf{W}_i^Q \in \mathbb{R}^{d_{\text{model}} \times d_k}$, $\mathbf{W}_i^K \in \mathbb{R}^{d_{\text{model}} \times d_k}$, $\mathbf{W}_i^V \in \mathbb{R}^{d_{\text{model}} \times d_v}$, $\mathbf{W}^O \in \mathbb{R}^{Hd_v \times d_{\text{model}}}$, with $d_k = d_v = d_{\text{model}} / H$.
 
 
-![](assets/LLM_Evolution_and_Scaling_page_7.png)
+![LLM Evolution and Scaling page 7](assets/LLM_Evolution_and_Scaling_page_7.png)
 
 **Interpretation**: Each head learns a different linear subspace to attend in, capturing distinct relational patterns (syntactic, semantic, positional).
 
@@ -519,7 +519,7 @@ PROCEDURE:
 
 ## 4. Scaling Laws in Language Models
 
-![](assets/scaling_laws_3d_1772169021295.png)
+![scaling laws 3d 1772169021295](assets/scaling_laws_3d_1772169021295.png)
 
 ### 4.1 Empirical Power Laws (Kaplan et al., 2020)
 
@@ -649,7 +649,7 @@ $$C_{\text{train}} \approx 6ND \quad \text{total}$$
 
 ### 4.4 Emergent Capabilities and Phase Transitions
 
-![](assets/emergent_abilities_phase_1772169049225.png)
+![emergent abilities phase 1772169049225](assets/emergent_abilities_phase_1772169049225.png)
 
 Beyond smooth power-law scaling of loss, Wei et al. (2022) documented **emergent abilities**—capabilities that appear abruptly above a critical model scale:
 
@@ -739,7 +739,7 @@ PROCEDURE:
 
 ### 5.1 Taxonomy of LLM Architectural Paradigms
 
-![](assets/llm_taxonomy_diagram_1772169067331.png)
+![llm taxonomy diagram 1772169067331](assets/llm_taxonomy_diagram_1772169067331.png)
 
 LLMs diverge along three primary architectural paradigms, each with distinct inductive biases:
 
@@ -1027,13 +1027,13 @@ This is a simple binary cross-entropy loss that directly optimizes the policy wi
 ### 5.7 Key Architectural Innovations Timeline
 
 
-![](assets/LLM_Evolution_and_Scaling_page_10.png)
+![LLM Evolution and Scaling page 10](assets/LLM_Evolution_and_Scaling_page_10.png)
 
 
-![](assets/LLM_Evolution_and_Scaling_page_9.png)
+![LLM Evolution and Scaling page 9](assets/LLM_Evolution_and_Scaling_page_9.png)
 
 
-![](assets/LLM_Evolution_and_Scaling_page_8.png)
+![LLM Evolution and Scaling page 8](assets/LLM_Evolution_and_Scaling_page_8.png)
 
 ```
 2017 ──── Transformer (Vaswani et al.)
@@ -1176,7 +1176,7 @@ PROCEDURE:
             - Typically 1-5 epochs, lower LR (1e-5 to 5e-5)
 
 
-![](assets/LLM_Evolution_and_Scaling_page_12.png)
+![LLM Evolution and Scaling page 12](assets/LLM_Evolution_and_Scaling_page_12.png)
 
     4.2  PREFERENCE OPTIMIZATION:
          OPTION A — RLHF:
@@ -1222,10 +1222,10 @@ PROCEDURE:
 ### 5.9 Comparative Analysis of Major LLM Families
 
 
-![](assets/LLM_Evolution_and_Scaling_page_13.png)
+![LLM Evolution and Scaling page 13](assets/LLM_Evolution_and_Scaling_page_13.png)
 
 
-![](assets/LLM_Evolution_and_Scaling_page_11.png)
+![LLM Evolution and Scaling page 11](assets/LLM_Evolution_and_Scaling_page_11.png)
 
 | Dimension | GPT-4 | PaLM-2 | LLaMA-3 70B | Mixtral 8x7B | DeepSeek-V3 |
 |---|---|---|---|---|---|
@@ -1248,7 +1248,7 @@ PROCEDURE:
 2. **The evolution from $n$-grams to transformers** is characterized by progressively relaxing the fixed-context assumption ($n$-grams → RNNs → attention), replacing discrete representations with distributed embeddings, and eliminating sequential computation bottlenecks.
 
 
-![](assets/LLM_Evolution_and_Scaling_page_14.png)
+![LLM Evolution and Scaling page 14](assets/LLM_Evolution_and_Scaling_page_14.png)
 
 3. **Scaling laws** reveal that loss follows power-law relationships with model size, data, and compute; the Chinchilla analysis established that **data and parameters should scale roughly equally** with compute budget, though inference-cost considerations push toward smaller, over-trained models.
 
