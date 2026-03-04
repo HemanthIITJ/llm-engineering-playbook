@@ -5,7 +5,7 @@ export const buildConfig: BuildConfig = {
     {
       kind: "local",
       id: "local-docs",
-      root: "llm_engineering_playbook",
+      root: "docs",
       include: ["**/*.md"],
       exclude: ["**/node_modules/**", "**/.git/**"],
       required: true,
@@ -24,7 +24,7 @@ export const buildConfig: BuildConfig = {
     }
   ],
   nav: {
-    indexFile: "llm_engineering_playbook/README.md",
+    indexFile: "docs/README.md",
     missingChapterPolicy: "placeholder-pages"
   },
   search: {

@@ -8,35 +8,75 @@ Whether you are a researcher, AI engineer, or student, this guide provides struc
 
 ## 📖 Table of Contents & Reading Order
 
-For the best learning experience, it is recommended to read the chapters in the following order:
+For the best learning experience, it is recommended to read the chapters in the following order. **Our UI navigation builder automatically structures the left-rail according to these chapter definitions.**
 
 ### Part 1: Foundations
-*   **[1. Word Embeddings](./Embeddings.md)**
-    *   *Covers:* Distributional hypothesis, vector semantics, count-based vs. prediction-based models (Word2Vec, SGNS), and embedding bias.
-*   **[2. Language Models](./LMs.md)**
-    *   *Covers:* Autoregressive factorization, n-grams to neural LMs, early RNNs, scaling laws (Kaplan, Chinchilla), and emergent capabilities.
 
-### Part 2: Architecture & Pretraining
-*   **[3. Transformers](./Transformers.md)**
-    *   *Covers:* The complete Transformer architecture, scaled dot-product attention, multi-head self-attention, positional encodings (RoPE, ALiBi), and efficient attention variants (FlashAttention).
-*   **[4. Language Model Pretraining](./Pretraining.md)**
-    *   *Covers:* Self-supervised objectives (AR, MLM, Span Corruption), ELMo, encoder-based models (BERT, RoBERTa, ELECTRA), and evaluation benchmarks (GLUE, SuperGLUE).
+### Chapter 1: Word Embeddings
+*   *Covers:* Distributional hypothesis, vector semantics, count-based vs. prediction-based models (Word2Vec, SGNS).
 
-### Part 3: Adaptation & Alignment
-*   **[5. Fine-Tuning and Alignment](./FT_Alignment.md)**
-    *   *Covers:* Supervised Fine-Tuning (SFT), Instruction Tuning, and Alignment techniques including RLHF (PPO) and Direct Preference Optimization (DPO).
-*   **[6. Parameter-Efficient Fine-Tuning (PEFT)](./PEFT.md)**
-    *   *Covers:* Model compression, Knowledge Distillation, Quantization (GPTQ, AWQ, QLoRA), and structured adaptation methods like LoRA, DoRA, and Adapters.
+### Chapter 2: Language Models
+*   *Covers:* Autoregressive factorization, n-grams to neural LMs, early RNNs, scaling laws, and emergent capabilities.
 
-### Part 4: Advanced Paradigms
-*   **[7. Prompt Engineering](./Prompting.md)**
-    *   *Covers:* In-context learning, Chain-of-Thought (CoT), Tree of Thoughts (ToT), few-shot prompting strategies, and prompt optimization.
-*   **[8. Augmented Language Models (ALMs)](./ALMs.md)**
-    *   *Covers:* Retrieval-Augmented Generation (RAG) architecture, Vector Indices, Tool Calling, and Agentic frameworks (ReAct, Self-RAG).
-*   **[9. Multilingual & Multimodal LLMs](./Multimodal.md)**
-    *   *Covers:* Cross-lingual transfer, tokenization equity, contrastive alignment (CLIP), early vs. late fusion, and multimodal instruction tuning.
-*   **[10. Recent Advances](./Recent.md)**
-    *   *Covers:* The latest frontier developments, novel architectures (e.g., State Space Models/Mamba, Mixture of Experts), and advanced inference optimization techniques.
+### Part 2: Architecture & Pretraining Overview
+
+### Chapter 3: Transformers
+*   *Covers:* The complete Transformer architecture, scaled dot-product attention, multi-head self-attention, positional encodings.
+
+### Chapter 4: Language Model Pretraining
+*   *Covers:* Self-supervised objectives, ELMo, encoder-based models, and evaluation benchmarks.
+
+### Part 3: The Pretraining Playbook
+An in-depth guide covering the full lifecycle of LLM pretraining using SmolLM3-3B as a case study.
+
+### Chapter 5: Strategic Justification
+*   *Covers:* Decision-theoretic framework, anti-patterns, hierarchical evaluation.
+
+### Chapter 6: Design Specification
+*   *Covers:* Translating strategic objectives to architecture and compute specifictions.
+
+### Chapter 7: Data Curation
+*   *Covers:* Source taxonomy, mathematical mixture optimization, and curriculum training.
+
+### Chapter 8: Data Mixture Case Study
+*   *Covers:* English web, multilingual, code, math — with ablation-driven validation.
+
+### Chapter 9: Scaling Laws
+*   *Covers:* Kaplan/Chinchilla formulation, overtraining paradigm, inference-aware training.
+
+### Chapter 10: Optimizer and Hyperparameters
+*   *Covers:* AdamW, Muon, learning rate schedules, critical batch size theory.
+
+### Chapter 11: Training Infrastructure
+*   *Covers:* GPU architecture, NVLink, storage, fault resilience, throughput optimization.
+
+### Chapter 12: Ablation Methodology
+*   *Covers:* Small-scale experimentation → large-model decisions, sequential integration.
+
+### Part 4: Adaptation & Alignment
+
+### Chapter 13: Post Training
+*   *Covers:* Continued pretraining, RLVR, preference optimization.
+
+### Chapter 14: Fine-Tuning and Alignment
+*   *Covers:* Supervised Fine-Tuning (SFT), Instruction Tuning, RLHF, and DPO.
+
+### Chapter 15: Parameter-Efficient Fine-Tuning
+*   *Covers:* Knowledge Distillation, Quantization (GPTQ, AWQ, QLoRA), LoRA, DoRA.
+
+### Part 5: Advanced Paradigms
+
+### Chapter 16: Prompt Engineering
+*   *Covers:* In-context learning, Chain-of-Thought (CoT), Tree of Thoughts (ToT).
+
+### Chapter 17: Augmented Language Models
+*   *Covers:* RAG architecture, Vector Indices, Tool Calling, and Agentic frameworks.
+
+### Chapter 18: Multimodal
+*   *Covers:* Cross-lingual transfer, tokenization equity, contrastive alignment.
+
+### Chapter 19: Recent Advances
+*   *Covers:* Novel architectures (State Space Models/Mamba, Mixture of Experts), sequence routing.
 
 ---
 
