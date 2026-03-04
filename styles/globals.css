@@ -1,3 +1,19 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+ * Global Shell Styles
+ * ═══════════════════════════════════════════════════════════════════════════
+ *
+ * Layout architecture:
+ *   Three-column CSS Grid at desktop (≥1120 px) with sticky sidebars and
+ *   resizable splitters. Collapses to single column with overlay drawers
+ *   on narrow viewports.
+ *
+ * Motion philosophy:
+ *   Every transition uses var(--transition-spring) for physically-
+ *   accurate overshoot, except reduced-motion contexts where all
+ *   animation is forcibly disabled via the preference query at EOF.
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Reset ─────────────────────────────────────────────────────────────── */
 * {
   box-sizing: border-box;
 }
@@ -22,6 +38,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* ── Base Typography ───────────────────────────────────────────────────── */
 a {
   color: var(--accent-strong);
   text-decoration: none;
@@ -41,12 +58,16 @@ h6 {
   line-height: 1.2;
 }
 
+/* ═══════════════════════════════════════════════════════════════════════════
+ * DocShell — main application chrome
+ * ═══════════════════════════════════════════════════════════════════════════ */
 .doc-shell {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
+/* ── Header ────────────────────────────────────────────────────────────── */
 .doc-shell__header {
   position: sticky;
   top: 0;
@@ -55,13 +76,31 @@ h6 {
   align-items: center;
   justify-content: space-between;
   gap: var(--space-4);
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(24px) saturate(1.8);
-  -webkit-backdrop-filter: blur(24px) saturate(1.8);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(28px) saturate(2);
+  -webkit-backdrop-filter: blur(28px) saturate(2);
   border-bottom: 1px solid var(--border);
-  box-shadow: 0 2px 12px -4px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.02),
+    0 4px 16px -6px rgba(0, 0, 0, 0.04);
   padding: clamp(0.75rem, 0.5rem + 0.5vw, 1.25rem) clamp(1rem, 0.8rem + 1.2vw, 2.25rem);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s var(--transition-spring);
+}
+
+/* Thin top accent line — 2px gradient strip at the very top of the page */
+.doc-shell__header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg,
+      transparent 0%,
+      var(--border-strong) 20%,
+      var(--accent-tint) 50%,
+      var(--border-strong) 80%,
+      transparent 100%);
+  opacity: 0.5;
 }
 
 .doc-shell__header-side {
@@ -114,6 +153,7 @@ h6 {
   }
 }
 
+/* ── Toggle Buttons ────────────────────────────────────────────────────── */
 .doc-shell__toggle {
   border: 1px solid var(--border);
   background: var(--panel);
@@ -124,8 +164,8 @@ h6 {
   font-size: 0.85rem;
   cursor: pointer;
   transition:
-    transform 130ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 130ms cubic-bezier(0.4, 0, 0.2, 1);
+    transform 130ms var(--transition-smooth),
+    background-color 130ms var(--transition-smooth);
 }
 
 .doc-shell__toggle:hover {
@@ -147,7 +187,7 @@ h6 {
   padding: 0;
   box-shadow: var(--shadow-sm);
   transform: translateZ(0);
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.2s var(--transition-spring);
 }
 
 .doc-shell__toggle--desktop:hover {
@@ -208,6 +248,7 @@ h6 {
   justify-content: center;
 }
 
+/* ── Layout Grid ──────────────────────────────────────────────────────── */
 .doc-shell__layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -222,20 +263,23 @@ h6 {
   min-width: 0;
 }
 
+/* ── Article Card ──────────────────────────────────────────────────────── */
 .doc-shell__article {
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-soft);
   padding: clamp(1.5rem, 3.5vw, 3rem) clamp(1.5rem, 3.5vw, 3rem);
-  animation: fade-slide-in 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: fade-slide-in 0.4s var(--transition-spring);
   overflow-x: hidden;
   max-width: 100%;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.35s var(--transition-spring),
+    box-shadow 0.35s var(--transition-spring);
 }
 
 .doc-shell__article:hover {
-  box-shadow: var(--shadow-panel);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-1px);
 }
 
 .doc-shell__meta {
@@ -248,6 +292,7 @@ h6 {
   font-size: 0.8rem;
 }
 
+/* ── Sidebars (mobile overlay mode) ───────────────────────────────────── */
 .left-rail,
 .doc-shell__right-wrap {
   position: fixed;
@@ -309,6 +354,7 @@ h6 {
   gap: 0.4rem;
 }
 
+/* ── Sidebar Items — refined active indicator ─────────────────────────── */
 .left-rail__item {
   display: block;
   padding: 0.45rem 0.65rem;
@@ -316,7 +362,8 @@ h6 {
   border: 1px solid transparent;
   color: var(--text-muted);
   font-size: 0.94rem;
-  transition: all 0.2s ease;
+  transition: all 0.2s var(--transition-spring);
+  position: relative;
 }
 
 .left-rail__item:hover {
@@ -330,6 +377,7 @@ h6 {
   border-color: transparent;
   color: var(--accent-strong);
   font-weight: 500;
+  box-shadow: inset 3px 0 0 0 var(--accent-tint);
 }
 
 .left-rail__item--placeholder {
@@ -337,6 +385,7 @@ h6 {
   border-style: dashed;
 }
 
+/* ── Right Rail ───────────────────────────────────────────────────────── */
 .right-rail {
   background: var(--panel);
 }
@@ -351,6 +400,7 @@ h6 {
   margin-left: var(--space-4);
 }
 
+/* ── Search Panel ─────────────────────────────────────────────────────── */
 .search-panel {
   display: grid;
   gap: var(--space-3);
@@ -369,17 +419,25 @@ h6 {
   padding: 0.55rem 0.7rem;
   background: #fff;
   color: var(--text);
+  transition: border-color 0.2s var(--transition-smooth),
+    box-shadow 0.2s var(--transition-smooth);
+}
+
+.search-panel__input:focus {
+  border-color: var(--border-strong);
+  box-shadow: 0 0 0 3px rgba(59, 66, 82, 0.08);
+  outline: none;
 }
 
 .search-panel__result {
   border: 1px solid var(--border);
   background: var(--panel);
   border-radius: var(--radius-md);
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.25s var(--transition-spring);
 }
 
 .search-panel__result:hover {
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.005);
   box-shadow: var(--shadow-soft);
   border-color: var(--border-strong);
 }
@@ -407,6 +465,7 @@ h6 {
   font-size: 0.85rem;
 }
 
+/* ── Full-page Search & 404 ───────────────────────────────────────────── */
 .search-page,
 .not-found-page {
   max-width: 980px;
@@ -432,6 +491,7 @@ h6 {
   background: var(--panel);
 }
 
+/* ── Keyframes ─────────────────────────────────────────────────────────── */
 @keyframes fade-slide-in {
   from {
     opacity: 0;
@@ -444,7 +504,11 @@ h6 {
   }
 }
 
-/* ---- Mobile layout overrides ---- */
+/* ═══════════════════════════════════════════════════════════════════════════
+ * Responsive Breakpoints
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Mobile (< 768px) ─────────────────────────────────────────────────── */
 @media (max-width: 767px) {
   .doc-shell__header {
     padding: 0.7rem 0.75rem;
@@ -482,6 +546,7 @@ h6 {
   }
 }
 
+/* ── Desktop (≥ 1120px) ───────────────────────────────────────────────── */
 @media (min-width: 1120px) {
   .doc-shell__header-side {
     min-width: 3rem;
@@ -568,6 +633,7 @@ h6 {
   }
 }
 
+/* ── Large Desktop (≥ 1440px) ─────────────────────────────────────────── */
 @media (min-width: 1440px) {
   .doc-shell__layout {
     grid-template-columns: var(--left-nav-width, 280px) minmax(0, 1fr) var(--right-nav-width, 260px);
@@ -585,6 +651,7 @@ h6 {
   }
 }
 
+/* ── Ultra-wide (≥ 2200px) ────────────────────────────────────────────── */
 @media (min-width: 2200px) {
   .doc-shell__layout {
     max-width: 100%;
@@ -612,6 +679,7 @@ h6 {
   }
 }
 
+/* ── 4K+ (≥ 3840px) ──────────────────────────────────────────────────── */
 @media (min-width: 3840px) {
   .doc-shell__layout {
     max-width: 100%;
@@ -648,6 +716,7 @@ h6 {
   }
 }
 
+/* ── Accessibility: reduced motion ─────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;
@@ -655,7 +724,9 @@ h6 {
   }
 }
 
-/* --- Splitters and Dynamic Layout --- */
+/* ═══════════════════════════════════════════════════════════════════════════
+ * Splitters & Dynamic Layout
+ * ═══════════════════════════════════════════════════════════════════════════ */
 .doc-shell__left-container {
   display: flex;
   position: sticky;
@@ -684,7 +755,7 @@ h6 {
 
 .doc-shell__splitter:hover,
 .doc-shell__splitter:active {
-  background-color: rgba(15, 118, 110, 0.05);
+  background-color: rgba(59, 66, 82, 0.05);
 }
 
 .doc-shell__splitter-handle {
@@ -695,12 +766,13 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s, width 0.2s;
 }
 
 .doc-shell__splitter:hover .doc-shell__splitter-handle,
 .doc-shell__splitter:active .doc-shell__splitter-handle {
-  background-color: var(--accent);
+  background-color: var(--accent-tint);
+  width: 5px;
 }
 
 .doc-shell__splitter svg {

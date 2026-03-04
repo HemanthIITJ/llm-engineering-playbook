@@ -1,9 +1,24 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+ * Design Tokens — Single Source of Truth
+ * ═══════════════════════════════════════════════════════════════════════════
+ *
+ * Rationale:
+ *   Every visual decision flows from this file. By centralising tokens here
+ *   we guarantee O(1) design-system updates — changing a value once
+ *   propagates deterministically to every dependent surface.
+ *
+ * Palette strategy:
+ *   Monochrome base with a single accent tint (deep indigo-slate) to add
+ *   refined warmth without breaking minimalism. The highlight channel uses
+ *   a warm-yellow for <mark> text that contrasts accessibly against the
+ *   white panel and the dark text.
+ * ═══════════════════════════════════════════════════════════════════════════ */
 :root {
-  /* Using Inter/system sans for a modern, enterprise-grade minimalist look */
+  /* ── Typography ─────────────────────────────────────────────────────── */
   --font-display: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
-  /* Classic monochrome palette */
+  /* ── Core Palette ───────────────────────────────────────────────────── */
   --bg: #ffffff;
   --bg-elevated: #fafafa;
   --panel: #ffffff;
@@ -12,19 +27,27 @@
   --border-strong: #d4d4d8;
   --text: #09090b;
   --text-muted: #71717a;
+
+  /* ── Accent — deep indigo-slate for interactive surfaces ────────────── */
   --accent: #18181b;
   --accent-strong: #000000;
   --accent-soft: #f4f4f5;
-  --warning: #ef4444;
+  --accent-tint: #3b4252;
 
-  /* Smooth curvature geometry */
+  /* ── Semantic Colors ────────────────────────────────────────────────── */
+  --warning: #ef4444;
+  --highlight: #fef9c3;
+  --highlight-border: #fde68a;
+
+  /* ── Curvature Geometry ─────────────────────────────────────────────── */
   --radius-xs: 4px;
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
   --radius-xl: 24px;
+  --radius-2xl: 32px;
 
-  /* Precise spacing */
+  /* ── Spacing Scale ──────────────────────────────────────────────────── */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -34,9 +57,18 @@
   --space-8: 3rem;
   --space-10: 4rem;
 
-  /* Refined visual depth / soft blur shadows */
+  /* ── Shadow System — layered for progressive depth ─────────────────── */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-soft: 0 4px 24px -6px rgba(0, 0, 0, 0.04), 0 0 1px rgba(0, 0, 0, 0.08);
-  --shadow-panel: 0 12px 48px -12px rgba(0, 0, 0, 0.08), 0 0 1px rgba(0, 0, 0, 0.12);
-  --shadow-float: 0 24px 64px -16px rgba(0, 0, 0, 0.12), 0 0 1px rgba(0, 0, 0, 0.15);
+  --shadow-soft: 0 4px 24px -6px rgba(0, 0, 0, 0.04),
+                 0 0 1px rgba(0, 0, 0, 0.08);
+  --shadow-panel: 0 12px 48px -12px rgba(0, 0, 0, 0.08),
+                  0 0 1px rgba(0, 0, 0, 0.12);
+  --shadow-float: 0 24px 64px -16px rgba(0, 0, 0, 0.12),
+                  0 0 1px rgba(0, 0, 0, 0.15);
+  --shadow-glow: 0 0 0 1px rgba(0, 0, 0, 0.03),
+                 0 8px 40px -8px rgba(0, 0, 0, 0.06);
+
+  /* ── Motion ─────────────────────────────────────────────────────────── */
+  --transition-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 }

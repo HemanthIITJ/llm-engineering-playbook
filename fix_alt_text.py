@@ -1,7 +1,7 @@
 import os
 import re
 
-directory = r"c:\Users\heman\Desktop\code\ai_model_expermint\Blogs\llm-engineering-playbook\llm_engineering_playbook"
+directory = r"c:\Users\heman\Desktop\code\ai_model_expermint\Blogs\llm-engineering-playbook\docs"
 
 count = 0
 for root, _, files in os.walk(directory):
